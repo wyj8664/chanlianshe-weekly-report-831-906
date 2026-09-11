@@ -376,6 +376,21 @@
     .supply-total-card .label small { display:block; margin-top:7px; font:700 17px var(--font-body); color:var(--muted); }
     .supply-total-card strong { font:900 58px/1 var(--font-number); color:var(--red); }
 
+    /* === WEEKLY CATEGORY SUPPLY STATUS === */
+    .supply-status-band { display:grid; grid-template-columns:1fr 1fr 1fr 1.15fr; margin-top:20px; border-top:3px solid var(--ink); border-bottom:1px solid var(--soft-line); }
+    .supply-status-stat { min-height:78px; padding:11px 18px 10px 0; border-right:1px solid var(--soft-line); }
+    .supply-status-stat + .supply-status-stat { padding-left:22px; }
+    .supply-status-stat span { display:block; color:var(--muted); font:700 17px var(--font-mono); }
+    .supply-status-stat strong { display:block; margin-top:5px; font:900 31px/1 var(--font-number); }
+    .supply-status-stat em { margin-left:9px; color:var(--red); font:800 18px var(--font-mono); font-style:normal; }
+    .supply-status-stat em.down { color:var(--green); }
+    .supply-status-conclusion { min-height:78px; padding:12px 20px; background:var(--ink); color:#fff; display:flex; flex-direction:column; justify-content:center; }
+    .supply-status-conclusion span { color:#bdbab1; font:700 16px var(--font-mono); }
+    .supply-status-conclusion strong { margin-top:6px; font-size:23px; line-height:1.25; }
+    .supply-chart-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px 16px; margin-top:16px; }
+    .excel-chart { height:299px; border:2px solid var(--ink); background:#fff; overflow:hidden; }
+    .excel-chart svg { display:block; width:100%; height:100%; }
+
     /* === COMPACT TREND TABLES === */
     .trend-table { margin-top:30px; border-top:3px solid var(--ink); }
     .trend-table-head,.trend-table-row { display:grid; grid-template-columns:310px 220px 220px 220px 1fr; gap:22px; align-items:center; }
@@ -448,6 +463,32 @@
     .push-rate strong { font:900 42px var(--font-number); color:var(--red); }
     .push-highlight { margin-top:28px; padding:24px 28px; background:var(--ink); color:#fff; display:flex; justify-content:space-between; align-items:center; gap:30px; font-size:24px; }
     .push-highlight strong { font:900 38px var(--font-number); color:var(--red); white-space:nowrap; }
+
+    /* === VIP SUPPLY GAP === */
+    .vip-gap-top { display:grid; grid-template-columns:1.18fr .82fr; gap:30px; margin-top:34px; }
+    .vip-timeline { border-top:4px solid var(--ink); }
+    .vip-time-row { display:grid; grid-template-columns:150px 1fr; gap:22px; align-items:center; min-height:98px; border-bottom:1px solid var(--soft-line); }
+    .vip-time-row .time { color:var(--red); font:900 27px var(--font-mono); }
+    .vip-time-row strong { display:block; font-size:26px; }
+    .vip-time-row p { margin-top:5px; color:var(--muted); font-size:21px; line-height:1.35; }
+    .vip-demand { min-height:298px; padding:28px 30px; background:var(--ink); color:#fff; }
+    .vip-demand .eyebrow { color:var(--red); font:800 18px var(--font-mono); letter-spacing:.08em; }
+    .vip-demand .demand-total { margin-top:18px; font:900 74px/1 var(--font-number); }
+    .vip-demand .demand-total small { margin-left:10px; font:800 24px var(--font-body); }
+    .vip-demand-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:28px; }
+    .vip-demand-card { padding-top:14px; border-top:1px solid #777; }
+    .vip-demand-card strong { display:block; color:var(--red); font:900 41px/1 var(--font-number); }
+    .vip-demand-card span { display:block; margin-top:6px; font-size:21px; line-height:1.3; }
+    .vip-columns { margin-top:28px; padding-top:18px; border-top:3px solid var(--ink); }
+    .vip-columns-head { display:flex; justify-content:space-between; gap:30px; align-items:center; }
+    .vip-columns-head strong { font-size:26px; }
+    .vip-columns-head span { color:var(--muted); font-size:20px; }
+    .vip-column-chips { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+    .vip-column-chip { padding:10px 16px; border:2px solid var(--ink); background:rgba(247,246,241,.92); font-size:21px; font-weight:800; }
+    .vip-column-chip.risk { border-color:var(--red); color:var(--red-dark); }
+    .vip-gap-verdict { margin-top:24px; padding:20px 26px; background:var(--red); color:#fff; display:flex; align-items:center; gap:25px; font-size:24px; }
+    .vip-gap-verdict span { font:800 17px var(--font-mono); letter-spacing:.08em; white-space:nowrap; }
+    .vip-gap-verdict strong { font:900 31px/1.3 var(--font-display); }
 
     /* === SECTION LABELS === */
     .section-label { margin-top:36px; padding-bottom:12px; border-bottom:3px solid var(--ink); font:800 24px var(--font-mono); color:var(--red); letter-spacing:.06em; }
@@ -587,7 +628,7 @@
     <main class="deck-stage" id="deckStage">
 
       <!-- === 01 COVER === -->
-<section class="slide cover active visible" data-number="01 / 18" aria-label="封面">
+<section class="slide cover active visible" data-number="01 / 20" aria-label="封面">
         <div class="cover-grid"></div>
         <header class="mast"><span>CONTENT PERFORMANCE</span><span data-editable>万联易达 · 站内数据</span></header>
         <div class="hero">
@@ -603,7 +644,7 @@
       </section>
 
       <!-- === 03 CORE METRICS === -->
-      <section class="slide" data-number="02 / 18" aria-label="核心指标三周趋势">
+      <section class="slide" data-number="02 / 20" aria-label="核心指标三周趋势">
         <header class="running"><span class="section">01 · 核心指标</span><span>产联社站内数据周报</span></header>
         <div class="page-body">
           <h2 class="reveal" data-editable>核心指标｜三周趋势</h2>
@@ -653,7 +694,7 @@
       </section>
 
       <!-- === 02 SUPPLY OVERVIEW === -->
-      <section class="slide" data-number="03 / 18" aria-label="自营内容供给三周趋势">
+      <section class="slide" data-number="03 / 20" aria-label="自营内容供给三周趋势">
         <header class="running"><span class="section">02 · 供给数据</span><span>产联社站内数据周报</span></header>
         <div class="page-body">
           <h2 class="reveal" data-editable>供给数据｜自营内容趋势</h2>
@@ -695,7 +736,7 @@
       </section>
 
       <!-- === 04 TOTAL CONSUMPTION === -->
-      <section class="slide" data-number="04 / 18" aria-label="总体消费指标三周趋势">
+      <section class="slide" data-number="04 / 20" aria-label="总体消费指标三周趋势">
         <header class="running"><span class="section">03 · 消费指标</span><span>产联社站内数据周报</span></header>
         <div class="page-body">
           <h2 class="reveal" data-editable>消费指标｜总体趋势</h2>
@@ -745,7 +786,7 @@
       </section>
 
       <!-- === 05 CONSUMPTION BY TYPE === -->
-      <section class="slide" data-number="05 / 18" aria-label="分类型消费指标三周趋势">
+      <section class="slide" data-number="05 / 20" aria-label="分类型消费指标三周趋势">
         <header class="running"><span class="section">03 · 消费指标</span><span>产联社站内数据周报</span></header>
         <div class="page-body">
           <h2 class="reveal" data-editable>消费指标｜图文、视频与事件</h2>
@@ -775,7 +816,7 @@
       </section>
 
       <!-- === 06 SELF-OPERATED CONSUMPTION === -->
-      <section class="slide" data-number="06 / 18" aria-label="自营内容消费指标三周趋势">
+      <section class="slide" data-number="06 / 20" aria-label="自营内容消费指标三周趋势">
         <header class="running"><span class="section">03 · 消费指标</span><span>产联社站内数据周报</span></header>
         <div class="page-body">
           <h2 class="reveal" data-editable>消费指标｜自营内容</h2>
@@ -800,7 +841,7 @@
       </section>
 
       <!-- === 07 SUPPLY METRICS === -->
-      <section class="slide" data-number="07 / 18" aria-label="供给指标三周趋势">
+      <section class="slide" data-number="07 / 20" aria-label="供给指标三周趋势">
         <header class="running"><span class="section">04 · 供给指标</span><span>产联社站内数据周报</span></header>
         <div class="page-body">
           <h2 class="reveal" data-editable>供给指标｜三周趋势</h2>
@@ -818,8 +859,28 @@
         </div>
       </section>
 
+      <!-- === 08 WEEKLY CATEGORY SUPPLY STATUS === -->
+      <section class="slide" data-number="08 / 20" aria-label="八大类供给现状">
+        <header class="running"><span class="section">04 · 供给现状</span><span>产联社站内数据周报</span></header>
+        <div class="page-body">
+          <h2 class="reveal" data-editable>供给增加，但曝光与点击同步下降</h2>
+          <div class="supply-status-band reveal">
+            <div class="supply-status-stat"><span>本周供给</span><strong>245 篇 <em>+21.3%</em></strong></div>
+            <div class="supply-status-stat"><span>本周曝光 PV</span><strong>19,131 <em class="down">−18.9%</em></strong></div>
+            <div class="supply-status-stat"><span>本周点击 PV</span><strong>906 <em class="down">−21.7%</em></strong></div>
+            <div class="supply-status-conclusion"><span>四周对比｜* 为不完整周</span><strong data-editable>数量继续扩张，消费端尚未同步承接</strong></div>
+          </div>
+          <div class="supply-chart-grid reveal">
+            <div class="excel-chart" id="weeklySupplyChart" aria-label="每周各大类内容供给量"></div>
+            <div class="excel-chart" id="weeklyExposureChart" aria-label="每周各大类曝光PV"></div>
+            <div class="excel-chart" id="weeklyClickChart" aria-label="每周各大类点击PV"></div>
+            <div class="excel-chart" id="weeklyCtrChart" aria-label="每周各大类点击率"></div>
+          </div>
+        </div>
+      </section>
+
       <!-- === 08 GROWTH DRIVERS === -->
-      <section class="slide" data-number="08 / 18" aria-label="用户增长原因">
+      <section class="slide" data-number="09 / 20" aria-label="用户增长原因">
         <header class="running"><span class="section">05 · 增长原因</span><span>产联社站内数据周报</span></header>
         <div class="page-body">
           <h2 class="reveal" data-editable>DAU 增长，但内容消费同步下降</h2>
@@ -855,7 +916,7 @@
       </section>
 
       <!-- === 09 CHANNEL SHARE === -->
-      <section class="slide" data-number="09 / 18" aria-label="频道点击结构">
+      <section class="slide" data-number="10 / 20" aria-label="频道点击结构">
         <header class="running"><span class="section">06 · 分发效率</span><span>产联社站内数据周报</span></header>
         <div class="page-body">
           <h2 class="reveal" data-editable>频道点击结构</h2>
@@ -877,7 +938,7 @@
       </section>
 
       <!-- === 10 ACCOUNTS === -->
-      <section class="slide" data-number="10 / 18" aria-label="账号表现">
+      <section class="slide" data-number="11 / 20" aria-label="账号表现">
         <header class="running"><span class="section">07 · 账号表现</span><span>产联社站内数据周报</span></header>
         <div class="page-body">
           <h2 class="reveal" data-editable>产联社 CLS 贡献最多，产联智库逆势增长</h2>
@@ -888,7 +949,7 @@
       </section>
 
       <!-- === 11 AUTHOR OUTPUT === -->
-      <section class="slide" data-number="11 / 18" aria-label="作者发文量排名">
+      <section class="slide" data-number="12 / 20" aria-label="作者发文量排名">
         <header class="running"><span class="section">08 · 作者表现</span><span>产联社站内数据周报</span></header>
         <div class="page-body">
           <h2 class="reveal" data-editable>作者发文量 Top 10</h2>
@@ -898,7 +959,7 @@
       </section>
 
       <!-- === 12 AUTHOR CLICK PV === -->
-      <section class="slide" data-number="12 / 18" aria-label="作者点击PV排名">
+      <section class="slide" data-number="13 / 20" aria-label="作者点击PV排名">
         <header class="running"><span class="section">08 · 作者表现</span><span>产联社站内数据周报</span></header>
         <div class="page-body">
           <h2 class="reveal" data-editable>作者站内点击 PV Top 10</h2>
@@ -908,7 +969,7 @@
       </section>
 
       <!-- === 13 AUTHOR DETAIL EXPOSURE === -->
-      <section class="slide" data-number="13 / 18" aria-label="作者详情页曝光排名">
+      <section class="slide" data-number="14 / 20" aria-label="作者详情页曝光排名">
         <header class="running"><span class="section">08 · 作者表现</span><span>产联社站内数据周报</span></header>
         <div class="page-body">
           <h2 class="reveal" data-editable>作者详情页曝光数 Top 10</h2>
@@ -918,7 +979,7 @@
       </section>
 
       <!-- === 14 TOP CONTENT === -->
-      <section class="slide" data-number="14 / 18" aria-label="站内点击Top10">
+      <section class="slide" data-number="15 / 20" aria-label="站内点击Top10">
         <header class="running"><span class="section">09 · 选题表现</span><span>产联社站内数据周报</span></header>
         <div class="page-body">
           <h2 class="reveal" data-editable>站内点击 PV 前 10</h2>
@@ -928,7 +989,7 @@
       </section>
 
       <!-- === 15 DETAIL EXPOSURE TOP10 === -->
-      <section class="slide" data-number="15 / 18" aria-label="详情页曝光Top10">
+      <section class="slide" data-number="16 / 20" aria-label="详情页曝光Top10">
         <header class="running"><span class="section">09 · 选题表现</span><span>产联社站内数据周报</span></header>
         <div class="page-body">
           <h2 class="reveal" data-editable>详情页曝光数前 10</h2>
@@ -939,7 +1000,7 @@
 
 
       <!-- === 16 TOPIC SIGNALS === -->
-      <section class="slide" data-number="16 / 18" aria-label="好选题信号">
+      <section class="slide" data-number="17 / 20" aria-label="好选题信号">
         <header class="running"><span class="section">09 · 选题表现</span><span>产联社站内数据周报</span></header>
         <div class="page-body">
           <h2 class="reveal" data-editable>本周高点击选题与栏目</h2>
@@ -961,7 +1022,7 @@
       </section>
 
       <!-- === 17 PUSH === -->
-      <section class="slide" data-number="17 / 18" aria-label="Push表现">
+      <section class="slide" data-number="18 / 20" aria-label="Push表现">
         <header class="running"><span class="section">10 · Push</span><span>产联社站内数据周报</span></header>
         <div class="page-body">
           <h2 class="reveal" data-editable>Push 发送与转化趋势</h2>
@@ -989,9 +1050,40 @@
         </div>
       </section>
 
+      <!-- === 19 VIP SUPPLY GAP === -->
+      <section class="slide" data-number="19 / 20" aria-label="VIP内容供给缺口">
+        <header class="running"><span class="section">11 · 供给缺口</span><span>产联社站内数据周报</span></header>
+        <div class="page-body">
+          <h2 class="reveal" data-editable>VIP 资源位缺的，是 14 时前可替换的内容</h2>
+          <p class="lead reveal" data-editable>稿件通常在 16 时集中产出；在此之前，VIP 内容供给与要闻页资源位更新节奏不匹配。</p>
+          <div class="vip-gap-top">
+            <div class="vip-timeline reveal">
+              <div class="vip-time-row"><div class="time">14 时前</div><div><strong>适合打 VIP 的新增内容不足</strong><p>缺少能及时承接首页资源位的日间供稿。</p></div></div>
+              <div class="vip-time-row"><div class="time">14—16 时</div><div><strong>资源位只能延后等待</strong><p>相当长的时间里没有合适内容，旧稿无法及时替换。</p></div></div>
+              <div class="vip-time-row"><div class="time">16 时后</div><div><strong>稿件集中出现</strong><p>供给时点晚于要闻页白天的持续更新需求。</p></div></div>
+            </div>
+            <article class="vip-demand reveal">
+              <div class="eyebrow">要闻页常态配置</div>
+              <div class="demand-total">5<small>个 VIP 资源位</small></div>
+              <div class="vip-demand-grid">
+                <div class="vip-demand-card"><strong>2 篇</strong><span>要闻页轮播图</span></div>
+                <div class="vip-demand-card"><strong>3 篇</strong><span>下方 10 个推荐位</span></div>
+              </div>
+            </article>
+          </div>
+          <div class="vip-columns reveal">
+            <div class="vip-columns-head"><strong>目前可打 VIP 的栏目与内容</strong><span>栏目虽多，但部分更新频率较低</span></div>
+            <div class="vip-column-chips">
+              <span class="vip-column-chip">产业速递</span><span class="vip-column-chip risk">出海风向标 · 出海风险</span><span class="vip-column-chip risk">出海风向标 · 出海商机</span><span class="vip-column-chip">政策风向</span><span class="vip-column-chip">独家</span><span class="vip-column-chip">老板看联播</span><span class="vip-column-chip">国别研究</span><span class="vip-column-chip">新能源产研</span><span class="vip-column-chip">趋势洞察</span>
+            </div>
+          </div>
+          <div class="vip-gap-verdict reveal"><span>核心缺口</span><strong data-editable>每天 14 时前稳定到稿、能够直接配置 VIP 资源位的内容供给。</strong></div>
+        </div>
+      </section>
+
       <!-- === 18 ACTIONS === -->
-      <section class="slide" data-number="18 / 18" aria-label="本周行动">
-        <header class="running"><span class="section">11 · 本周行动</span><span>产联社站内数据周报</span></header>
+      <section class="slide" data-number="20 / 20" aria-label="本周行动">
+        <header class="running"><span class="section">12 · 本周行动</span><span>产联社站内数据周报</span></header>
         <div class="page-body">
           <h2 class="reveal" data-editable>本周重点工作安排</h2>
           <div class="actions">
@@ -1010,7 +1102,7 @@
   <!-- === DECK CONTROLS === -->
   <nav class="deck-controls" id="deckControls" aria-label="幻灯片控制">
     <button id="prevBtn" aria-label="上一页">←</button>
-    <div class="page-count"><span id="currentPage">1</span> / <span id="totalPages">18</span></div>
+    <div class="page-count"><span id="currentPage">1</span> / <span id="totalPages">20</span></div>
     <div class="progress"><i id="progressBar"></i></div>
     <button id="nextBtn" aria-label="下一页">→</button>
   </nav>
@@ -1078,6 +1170,90 @@
     /* === DATA-DRIVEN RENDERERS === */
     function formatNumber(value) {
       return Number(value).toLocaleString("zh-CN");
+    }
+
+    /* === FOUR CHARTS REPRODUCED FROM THE SUPPLIED WEEKLY WORKBOOK === */
+    const weeklyCategoryData = {
+      weeks:["8/10—8/16*","8/17—8/23","8/24—8/30","8/31—9/06"],
+      series:[
+        {name:"硬科技",color:"#376df6",supply:[46,75,77,82],exposure:[3577,4641,9812,7222],click:[180,229,442,383],ctr:[.0503215,.0493428,.0450469,.0530324]},
+        {name:"大宗",color:"#f59e0b",supply:[39,49,49,54],exposure:[2681,3028,5495,4128],click:[108,135,319,162],ctr:[.0402835,.0445839,.0580528,.0392442]},
+        {name:"新能源",color:"#10b981",supply:[7,7,8,8],exposure:[378,419,718,689],click:[26,36,40,32],ctr:[.0687831,.0859189,.0557103,.0464441]},
+        {name:"汽车",color:"#7c3aed",supply:[10,22,22,32],exposure:[757,1427,2436,2489],click:[48,116,84,136],ctr:[.0634082,.0812894,.0344828,.0546404]},
+        {name:"新消费",color:"#ec4899",supply:[11,8,12,18],exposure:[579,552,2189,1331],click:[32,25,97,60],ctr:[.0552677,.0452899,.0443125,.0450789]},
+        {name:"物流",color:"#0ea5b7",supply:[3,5,3,2],exposure:[420,311,222,102],click:[44,14,11,4],ctr:[.1047619,.0450161,.0495495,.0392157]},
+        {name:"金融",color:"#4b5d73",supply:[17,21,24,36],exposure:[776,957,1941,2264],click:[36,56,101,92],ctr:[.0463918,.0585162,.0520350,.0406360]},
+        {name:"其他",color:"#a3a3a3",supply:[9,15,7,13],exposure:[344,874,784,906],click:[26,46,63,37],ctr:[.0755814,.0526316,.0803571,.0408389]}
+      ]
+    };
+
+    function renderWeeklyCategoryCharts() {
+      const NS="http://www.w3.org/2000/svg";
+      const make=(tag,attrs,text)=>{
+        const node=document.createElementNS(NS,tag);
+        Object.entries(attrs||{}).forEach(([key,value])=>node.setAttribute(key,value));
+        if (text!==undefined) node.textContent=text;
+        return node;
+      };
+      const addLegend=(svg)=>{
+        weeklyCategoryData.series.forEach((series,index)=>{
+          const x=32+index*100;
+          svg.appendChild(make("rect",{x,y:47,width:13,height:13,rx:2,fill:series.color}));
+          svg.appendChild(make("text",{x:x+19,y:59,fill:"#66635d","font-size":14,"font-family":"PingFang SC, sans-serif"},series.name));
+        });
+      };
+      const addTitle=(svg,title)=>svg.appendChild(make("text",{x:420,y:28,"text-anchor":"middle",fill:"#11110f","font-size":25,"font-weight":800,"font-family":"PingFang SC, sans-serif"},title));
+      const metricLabel=(value,key)=>key==="ctr" ? Math.round(value*100)+"%" : formatNumber(Math.round(value));
+      const drawAxes=(svg,key,axisMax,step)=>{
+        const left=54,right=824,top=78,bottom=282,height=bottom-top;
+        for(let value=0;value<=axisMax+step/2;value+=step){
+          const y=bottom-value/axisMax*height;
+          svg.appendChild(make("line",{x1:left,y1:y,x2:right,y2:y,stroke:"#d5d2ca","stroke-width":1,"stroke-dasharray":"5 5"}));
+          svg.appendChild(make("text",{x:left-8,y:y+5,"text-anchor":"end",fill:"#6d6a63","font-size":13,"font-family":"Avenir Next, sans-serif"},metricLabel(value,key)));
+        }
+        return {left,right,top,bottom,height,width:right-left};
+      };
+      const renderStacked=(id,key,title,axisMax,step)=>{
+        const target=document.getElementById(id);
+        if(!target) return;
+        const svg=make("svg",{viewBox:"0 0 840 320",role:"img","aria-label":title,preserveAspectRatio:"xMidYMid meet"});
+        addTitle(svg,title); addLegend(svg);
+        const frame=drawAxes(svg,key,axisMax,step);
+        const groupWidth=frame.width/weeklyCategoryData.weeks.length;
+        const barWidth=92;
+        weeklyCategoryData.weeks.forEach((week,weekIndex)=>{
+          const x=frame.left+weekIndex*groupWidth+(groupWidth-barWidth)/2;
+          let yBottom=frame.bottom;
+          weeklyCategoryData.series.forEach((series)=>{
+            const value=series[key][weekIndex];
+            const height=value/axisMax*frame.height;
+            yBottom-=height;
+            svg.appendChild(make("rect",{x,y:yBottom,width:barWidth,height:Math.max(1,height),fill:series.color}));
+          });
+          svg.appendChild(make("text",{x:x+barWidth/2,y:307,"text-anchor":"middle",fill:"#69665f","font-size":14,"font-family":"PingFang SC, sans-serif"},week));
+        });
+        target.replaceChildren(svg);
+      };
+      const renderLines=(id,key,title,axisMax,step)=>{
+        const target=document.getElementById(id);
+        if(!target) return;
+        const svg=make("svg",{viewBox:"0 0 840 320",role:"img","aria-label":title,preserveAspectRatio:"xMidYMid meet"});
+        addTitle(svg,title); addLegend(svg);
+        const frame=drawAxes(svg,key,axisMax,step);
+        const xFor=index=>frame.left+(index+.5)*frame.width/weeklyCategoryData.weeks.length;
+        weeklyCategoryData.series.forEach((series)=>{
+          const points=series[key].map((value,index)=>`${xFor(index)},${frame.bottom-value/axisMax*frame.height}`).join(" ");
+          svg.appendChild(make("polyline",{points,fill:"none",stroke:series.color,"stroke-width":2.7,"stroke-linecap":"round","stroke-linejoin":"round"}));
+          series[key].forEach((value,index)=>svg.appendChild(make("circle",{cx:xFor(index),cy:frame.bottom-value/axisMax*frame.height,r:3,fill:series.color})));
+        });
+        weeklyCategoryData.weeks.forEach((week,index)=>svg.appendChild(make("text",{x:xFor(index),y:307,"text-anchor":"middle",fill:"#69665f","font-size":14,"font-family":"PingFang SC, sans-serif"},week)));
+        target.replaceChildren(svg);
+      };
+
+      renderStacked("weeklySupplyChart","supply","每周各大类内容供给量",300,100);
+      renderStacked("weeklyExposureChart","exposure","每周各大类曝光 PV",25000,5000);
+      renderStacked("weeklyClickChart","click","每周各大类点击 PV",1400,200);
+      renderLines("weeklyCtrChart","ctr","每周各大类点击率",.12,.02);
     }
 
     function renderRank(containerId, key, secondary) {
@@ -1154,6 +1330,7 @@
     renderAccounts();
     renderTopStories();
     renderTopDetail();
+    renderWeeklyCategoryCharts();
 
     /* === SLIDE PRESENTATION CONTROLLER === */
     class SlidePresentation {
@@ -1284,7 +1461,7 @@
         const blob=new Blob(["<!doctype html>\n"+clone.outerHTML],{type:"text/html;charset=utf-8"});
         const link=document.createElement("a");
         link.href=URL.createObjectURL(blob);
-        link.download="产联社站内数据周报-8.24-8.30.html";
+        link.download="产联社站内数据周报-8.31-9.6.html";
         link.click();
         setTimeout(()=>URL.revokeObjectURL(link.href),1000);
       }
